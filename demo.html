@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWMS - Panel Demo</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-boxes-stacked logo-icon"></i>
+                <h2>SmartWMS</h2>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="active" data-tab="dashboard">
+                    <a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                </li>
+                <li data-tab="inventory">
+                    <a href="#"><i class="fa-solid fa-box-open"></i> Magazyn</a>
+                </li>
+                <li data-tab="orders">
+                    <a href="#"><i class="fa-solid fa-dolly"></i> Zamówienia</a>
+                </li>
+                <li class="mt-auto">
+                    <a href="index.html"><i class="fa-solid fa-power-off"></i> Wyloguj</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1 id="page-header-title">Przegląd magazynu</h1>
+                    <p class="date-display">Dzisiaj: <span id="currentDate"></span></p>
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="profile-info">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=7158e2&color=fff" alt="User">
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </header>
+
+            <div id="view-dashboard" class="content-view active-view fade-in">
+                <div class="stats-grid">
+                    <div class="stat-card-demo purple">
+                        <div class="icon"><i class="fa-solid fa-cubes"></i></div>
+                        <div class="info">
+                            <h3>Produkty</h3>
+                            <h2 id="total-products">0</h2>
+                            <p>Całkowity stan</p>
+                        </div>
+                    </div>
+                    <div class="stat-card-demo orange">
+                        <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="info">
+                            <h3>Niski stan</h3>
+                            <h2 id="low-stock-count">0</h2>
+                            <p>Wymaga zamówienia</p>
+                        </div>
+                    </div>
+                    <div class="stat-card-demo green">
+                        <div class="icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                        <div class="info">
+                            <h3>Wartość</h3>
+                            <h2 id="total-value">124k PLN</h2>
+                            <p>Szacowana wartość</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-row">
+                    <div class="chart-container">
+                        <h3><i class="fa-solid fa-chart-pie"></i> Rozkład Kategorii</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="categoriesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="recent-activity">
+                        <h3><i class="fa-solid fa-clock-rotate-left"></i> Ostatnie operacje</h3>
+                        <ul class="activity-list" id="activity-list">
+                            <li><i class="fa-solid fa-plus circle-icon green"></i> Dodano "Laptop Dell"</li>
+                            <li><i class="fa-solid fa-minus circle-icon orange"></i> Wydano "Kabel HDMI"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-inventory" class="content-view fade-in" style="display: none;">
+                <div class="table-actions">
+                    <input type="text" id="search-inventory" placeholder="Szukaj produktu...">
+                    <button class="btn-primary" id="btn-add-product"><i class="fa-solid fa-plus"></i> Dodaj Produkt</button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="wms-table">
+                        <thead>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Kategoria</th>
+                                <th>Lokalizacja</th>
+                                <th>Ilość</th>
+                                <th>Status</th>
+                                <th>Akcje</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventory-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div id="view-orders" class="content-view fade-in" style="display: none;">
+                <div class="empty-state">
+                    <i class="fa-solid fa-dolly"></i>
+                    <h2>Moduł zamówień</h2>
+                    <p>Ta funkcjonalność jest dostępna w pełnej wersji systemu.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="add-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Nowy Produkt</h3>
+                <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label>Nazwa produktu</label>
+                    <input type="text" id="inp-name" required placeholder="np. Słuchawki Sony">
+                </div>
+                <div class="form-group">
+                    <label>Kategoria</label>
+                    <select id="inp-category">
+                        <option value="Elektronika">Elektronika</option>
+                        <option value="Akcesoria">Akcesoria</option>
+                        <option value="Kable">Kable</option>
+                        <option value="Inne">Inne</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Ilość</label>
+                        <input type="number" id="inp-qty" required min="0" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label>Lokalizacja</label>
+                        <input type="text" id="inp-loc" required placeholder="np. A-01">
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary full-width">Zapisz w bazie</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="demo-data.js"></script>
+    <script src="demo-script.js"></script>
+</body>
+</html>
