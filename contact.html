@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - SmartWMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <span>SmartWMS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="about.html">O systemie</a></li>
+            <li><a href="features.html">Funkcje</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <a href="demo.html" class="btn-demo" id="demoLink">Uruchom DEMO <i class="fa-solid fa-arrow-right"></i></a>        
+    </nav>
+
+    <header class="page-header animate-up">
+        <h1>Bądźmy w <span class="highlight">kontakcie</span></h1>
+        <p>Jesteśmy tu, aby pomóc Ci zoptymalizować Twój magazyn.</p>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-wrapper scroll-reveal">
+                <div class="contact-info">
+                    <h2>Dane kontaktowe</h2>
+                    <p>Napisz do nas, jeśli potrzebujesz dedykowanego wdrożenia lub masz pytania techniczne.</p>
+                    <ul class="info-list">
+                        <li>
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <strong>Email:</strong><br>
+                                kontakt@smartwms.pl
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <strong>Telefon:</strong><br>
+                                +48 123 456 789
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <strong>Biuro:</strong><br>
+                                ul. Magazynowa 42, Warszawa
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Imię" required>
+                        <input type="text" placeholder="Nazwisko">
+                    </div>
+                    <input type="email" placeholder="Adres e-mail" required>
+                    <select>
+                        <option>Temat wiadomości...</option>
+                        <option>Wsparcie techniczne</option>
+                        <option>Oferta handlowa</option>
+                        <option>Inne</option>
+                    </select>
+                    <textarea placeholder="Wiadomość..." rows="5" required></textarea>
+                    <button type="submit" class="btn-primary full-width">Wyślij wiadomość</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container faq-container">
+            <h2 class="text-center mb-40 scroll-reveal">Częste pytania (FAQ)</h2>
+            
+            <details class="faq-item scroll-reveal delay-1">
+                <summary>Czy SmartWMS jest darmowy?</summary>
+                <div class="faq-content">
+                    Wersja demo dostępna na stronie jest całkowicie darmowa i działa w przeglądarce. Pełne wdrożenie z bazą danych w chmurze jest płatne.
+                </div>
+            </details>
+
+            <details class="faq-item scroll-reveal delay-1">
+                <summary>Czy moje dane w Demo są bezpieczne?</summary>
+                <div class="faq-content">
+                    Tak! Wersja Demo używa "LocalStorage" Twojej przeglądarki. Dane nigdy nie są wysyłane na żaden zewnętrzny serwer.
+                </div>
+            </details>
+
+            <details class="faq-item scroll-reveal delay-2">
+                <summary>Czy system obsługuje czytniki kodów kreskowych?</summary>
+                <div class="faq-content">
+                    Tak, SmartWMS jest kompatybilny z większością czytników kodów kreskowych podłączanych przez USB lub Bluetooth, działających jako klawiatura.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SmartWMS. Projekt oparty na designie Smart Home.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

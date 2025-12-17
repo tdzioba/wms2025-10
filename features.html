@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcje - SmartWMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <span>SmartWMS</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="about.html">O systemie</a></li>
+            <li><a href="features.html">Funkcje</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <a href="demo.html" class="btn-demo" id="demoLink">Uruchom DEMO <i class="fa-solid fa-arrow-right"></i></a>        
+    </nav>
+
+    <header class="page-header animate-up">
+        <h1>Poznaj <span class="highlight">Możliwości</span></h1>
+        <p>System zaprojektowany tak, aby wspierać każdy ruch magazyniera.</p>
+    </header>
+
+    <section class="section">
+        <div class="container split-layout">
+            <div class="split-text scroll-reveal">
+                <div class="feature-tag purple">PZ - Przyjęcie Zewnętrzne</div>
+                <h2>Szybkie przyjmowanie towaru</h2>
+                <p>Zapomnij o papierowych listach przewozowych. W SmartWMS przyjęcie towaru to kwestia kilku kliknięć lub zeskanowania kodu.</p>
+                <ul class="feature-list">
+                    <li>Automatyczne generowanie ID produktu</li>
+                    <li>Przypisywanie lokalizacji (Regał, Półka)</li>
+                    <li>Natychmiastowa aktualizacja stanu</li>
+                </ul>
+            </div>
+            <div class="split-image scroll-reveal delay-1">
+                <div class="interface-mockup purple-mockup">
+                    <div class="mockup-header-sm"><div class="dots"></div></div>
+                    <div class="mockup-content">
+                        <div class="mock-row"><span>Produkt:</span> <strong>iPhone 15 Pro</strong></div>
+                        <div class="mock-row"><span>Ilość:</span> <strong>50 szt.</strong></div>
+                        <div class="mock-btn">Zatwierdź PZ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container split-layout reverse">
+            <div class="split-text scroll-reveal">
+                <div class="feature-tag orange">WZ - Wydanie Zewnętrzne</div>
+                <h2>Bezbłędna kompletacja</h2>
+                <p>System prowadzi magazyniera po optymalnej ścieżce zbiórki. Minimalizujemy ryzyko pomyłki przy wydawaniu towaru.</p>
+                <ul class="feature-list">
+                    <li>Rezerwacja towaru pod zamówienie</li>
+                    <li>Walidacja stanów magazynowych</li>
+                    <li>Historia wydań dla każdego pracownika</li>
+                </ul>
+            </div>
+            <div class="split-image scroll-reveal delay-1">
+                 <div class="interface-mockup orange-mockup">
+                    <div class="mockup-header-sm"><div class="dots"></div></div>
+                    <div class="mockup-content">
+                        <div class="mock-alert"><i class="fa-solid fa-triangle-exclamation"></i> Niski stan!</div>
+                        <div class="mock-row"><span>Do wydania:</span> <strong>20 szt.</strong></div>
+                        <div class="mock-btn orange-btn">Generuj WZ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split-layout">
+            <div class="split-text scroll-reveal">
+                <div class="feature-tag">Analityka</div>
+                <h2>Twoje centrum dowodzenia</h2>
+                <p>Podejmuj decyzje na podstawie danych, a nie przeczucia. Pulpit nawigacyjny dostarcza kluczowych informacji w czasie rzeczywistym.</p>
+                <p>Sprawdź, które produkty rotują najszybciej, a które zalegają na półkach.</p>
+            </div>
+            <div class="split-image scroll-reveal delay-1">
+                <div class="interface-mockup chart-mockup">
+                    <div class="mock-chart-bars">
+                        <div class="m-bar" style="height: 40%"></div>
+                        <div class="m-bar" style="height: 80%"></div>
+                        <div class="m-bar" style="height: 60%"></div>
+                        <div class="m-bar active" style="height: 95%"></div>
+                        <div class="m-bar" style="height: 50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section text-center">
+        <div class="container">
+            <h2 class="scroll-reveal">Gotowy na testy?</h2>
+            <p class="scroll-reveal delay-1">Sprawdź wersję demonstracyjną bez logowania i instalacji.</p>
+            <a href="demo.html" class="btn-primary mt-30 scroll-reveal delay-2">Przejdź do Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SmartWMS. Projekt oparty na designie Smart Home.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

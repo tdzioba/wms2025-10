@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartWMS - Nowoczesne Zarządzanie Magazynem</title>
+    <title>SmartWMS - Inteligentny Magazyn</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,36 +11,40 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">
+        <a href="index.html" class="logo">
             <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
             <span>SmartWMS</span>
-        </div>
+        </a>
         <ul class="nav-links">
-            <li><a href="#hero">Start</a></li>
-            <li><a href="#about">O systemie</a></li>
-            <li><a href="#offer">Funkcje</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="index.html" class="active">Start</a></li> <li><a href="about.html">O systemie</a></li>
+            <li><a href="features.html">Funkcje</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
         </ul>
-            <a href="demo.html" class="btn-demo" id="demoLink">Uruchom DEMO <i class="fa-solid fa-arrow-right"></i></a>        
-            <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
+        <a href="demo.html" class="btn-demo" id="demoLink">Uruchom DEMO <i class="fa-solid fa-arrow-right"></i></a>        
     </nav>
 
-    <section id="hero" class="hero-section">
+    <section class="hero-section">
         <div class="hero-content">
-            <h1 class="animate-up">Zarządzaj magazynem <br><span class="highlight">inteligentnie.</span></h1>
-            <p class="animate-up delay-1">Kompleksowy system WMS oparty o nowoczesny design i intuicyjną obsługę. Wydawaj, przyjmuj i kontroluj towary w czasie rzeczywistym.</p>
-            <div class="hero-buttons animate-up delay-2">
-                <a href="#" class="btn-primary">Rozpocznij teraz</a>
-                <a href="#offer" class="btn-secondary">Poznaj funkcje</a>
+            <div class="badge-new animate-up">Nowość v2.0</div>
+            <h1 class="animate-up delay-1">Twój magazyn <br>w <span class="highlight">wersji Smart.</span></h1>
+            <p class="animate-up delay-2">Oprogramowanie, które łączy przemysłową wydajność z lekkością aplikacji konsumenckich. Zarządzaj stanami, przyjmuj dostawy i kompletuj zamówienia bez szkolenia.</p>
+            <div class="hero-buttons animate-up delay-3">
+                <a href="demo.html" class="btn-primary">Sprawdź Demo</a>
+                <a href="features.html" class="btn-secondary">Poznaj funkcje</a>
+            </div>
+            
+            <div class="trust-strip animate-up delay-3">
+                <span>Zaufali nam:</span>
+                <div class="trust-logos">
+                    <i class="fa-brands fa-dhl"></i>
+                    <i class="fa-brands fa-amazon"></i>
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
             </div>
         </div>
+
         <div class="hero-image animate-fade delay-1">
-            <div class="mockup-card">
-                <div class="mockup-header">
+            <div class="mockup-card float-animation"> <div class="mockup-header">
                     <div class="dot red"></div>
                     <div class="dot yellow"></div>
                     <div class="dot green"></div>
@@ -64,86 +68,117 @@
                         <div class="bar" style="height: 40%"></div>
                         <div class="bar" style="height: 70%"></div>
                         <div class="bar" style="height: 50%"></div>
-                        <div class="bar" style="height: 90%"></div>
+                        <div class="bar active" style="height: 90%"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">Dlaczego SmartWMS?</h2>
-            <div class="about-grid">
-                <div class="about-card scroll-reveal">
-                    <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Szybkość działania</h3>
-                    <p>Zoptymalizowany interfejs pozwala na błyskawiczne operacje magazynowe bez zbędnych kliknięć.</p>
-                </div>
-                <div class="about-card scroll-reveal delay-1">
-                    <div class="icon-box"><i class="fa-solid fa-cloud"></i></div>
-                    <h3>Brak backendu</h3>
-                    <p>Dzięki technologii LocalStorage Twoje dane są bezpieczne w Twojej przeglądarce. Idealne do testów.</p>
-                </div>
-                <div class="about-card scroll-reveal delay-2">
-                    <div class="icon-box"><i class="fa-solid fa-paintbrush"></i></div>
-                    <h3>Nowoczesny Design</h3>
-                    <p>Interfejs inspirowany trendami Smart Home. Przyjazny dla oka i intuicyjny dla operatora.</p>
-                </div>
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title scroll-reveal">Dlaczego SmartWMS?</h2>
+            <p class="section-subtitle scroll-reveal delay-1">System zaprojektowany, by oszczędzać Twój czas.</p>
+            
+            <div class="features-grid mt-50">
+                <a href="features.html" class="feature-card-link">
+                    <div class="feature-card card-white scroll-reveal delay-1 hover-effect">
+                        <div class="icon-box"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Szybkość</h3>
+                        <p>Interfejs reaguje natychmiastowo. Zero przeładowań strony dzięki technologii SPA.</p>
+                        <span class="read-more">Więcej <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="features.html" class="feature-card-link">
+                    <div class="feature-card card-white scroll-reveal delay-2 hover-effect">
+                        <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Prostota</h3>
+                        <p>Design inspirowany Smart Home. Każdy, kto umie obsłużyć smartfon, obsłuży ten system.</p>
+                        <span class="read-more">Więcej <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="features.html" class="feature-card-link">
+                    <div class="feature-card card-white scroll-reveal delay-3 hover-effect">
+                        <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Analiza</h3>
+                        <p>Wbudowane dashboardy pokazują kondycję Twojego magazynu w czasie rzeczywistym.</p>
+                        <span class="read-more">Więcej <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="mt-50 scroll-reveal">
+                <a href="features.html" class="btn-secondary">Zobacz pełną listę funkcji</a>
             </div>
         </div>
     </section>
 
-    <section id="offer" class="section bg-light">
+    <section class="section bg-gradient">
         <div class="container">
-            <h2 class="section-title">Co potrafi Demo?</h2>
-            <div class="features-grid">
-                <div class="feature-card card-purple scroll-reveal">
-                    <div class="toggle-switch"><div class="circle"></div></div>
-                    <i class="fa-solid fa-boxes-packing feature-icon"></i>
-                    <h3>Przyjęcia PZ</h3>
-                    <p>Dodawaj nowe towary do bazy i przypisuj im lokalizacje.</p>
+            <h2 class="text-center text-white scroll-reveal">Jak to działa?</h2>
+            <div class="steps-container">
+                
+                <div class="step-item scroll-reveal delay-1">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h3 class="text-white">Przyjmij</h3>
+                    <p class="text-white-50">Zeskanuj towar i przypisz mu lokalizację w systemie.</p>
                 </div>
 
-                <div class="feature-card card-orange scroll-reveal delay-1">
-                    <div class="toggle-switch on"><div class="circle"></div></div>
-                    <i class="fa-solid fa-truck-ramp-box feature-icon"></i>
-                    <h3>Wydania WZ</h3>
-                    <p>Kompletuj zamówienia i zdejmuj stany magazynowe jednym kliknięciem.</p>
+                <div class="step-connector scroll-reveal delay-1"><i class="fa-solid fa-angle-right"></i></div>
+
+                <div class="step-item scroll-reveal delay-2">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                    <h3 class="text-white">Zarządzaj</h3>
+                    <p class="text-white-50">Monitoruj stany i przesunięcia na dashboardzie.</p>
                 </div>
 
-                <div class="feature-card card-white scroll-reveal delay-2">
-                    <i class="fa-solid fa-chart-pie feature-icon text-purple"></i>
-                    <h3>Raporty</h3>
-                    <p>Wizualizacja stanów magazynowych na wykresach w czasie rzeczywistym.</p>
+                <div class="step-connector scroll-reveal delay-2"><i class="fa-solid fa-angle-right"></i></div>
+
+                <div class="step-item scroll-reveal delay-3">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fa-solid fa-dolly"></i></div>
+                    <h3 class="text-white">Wydaj</h3>
+                    <p class="text-white-50">Generuj dokumenty WZ i kompletuj zamówienia.</p>
                 </div>
-                 <div class="feature-card card-white scroll-reveal delay-3">
-                    <i class="fa-solid fa-users feature-icon text-orange"></i>
-                    <h3>Pracownicy</h3>
-                    <p>Zarządzaj dostępem i rolami w systemie magazynowym.</p>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="contact-wrapper scroll-reveal">
-                <div class="contact-info">
-                    <h2>Skontaktuj się</h2>
-                    <p>Chcesz wdrożyć SmartWMS w swojej firmie? Napisz do nas.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-envelope"></i> kontakt@smartwms.pl</li>
-                        <li><i class="fa-solid fa-phone"></i> +48 123 456 789</li>
-                        <li><i class="fa-solid fa-location-dot"></i> Warszawa, Polska</li>
-                    </ul>
+    <section class="section">
+        <div class="container split-layout">
+            <div class="split-image scroll-reveal">
+                <div class="mission-card">
+                    <i class="fa-solid fa-rocket mission-icon"></i>
+                    <div class="mission-content">
+                        <h4>Nasza Misja</h4>
+                        <p>Ułatwiamy logistykę.</p>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Imię i nazwisko" required>
-                    <input type="email" placeholder="Adres e-mail" required>
-                    <textarea placeholder="Wiadomość" rows="5" required></textarea>
-                    <button type="submit" class="btn-primary full-width">Wyślij wiadomość</button>
-                </form>
+            </div>
+            <div class="split-text scroll-reveal delay-1">
+                <div class="feature-tag purple">O nas</div>
+                <h2>Tworzymy narzędzia, <br>których sami chcielibyśmy używać.</h2>
+                <p>SmartWMS powstał jako odpowiedź na skomplikowane systemy ERP, które wymagały tygodni szkoleń. My wierzymy w zasadę "Plug & Play".</p>
+                <p>Nasz zespół składa się z pasjonatów UX i logistyki.</p>
+                <a href="about.html" class="btn-text">Poznaj naszą historię <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section text-center">
+        <div class="container">
+            <div class="cta-box scroll-reveal">
+                <h2>Przetestuj bez ryzyka</h2>
+                <p>Nie musisz zakładać konta. Po prostu wejdź i sprawdź, jak działa nowoczesny WMS.</p>
+                <div class="cta-buttons">
+                    <a href="demo.html" class="btn-demo-big">Uruchom Demo <i class="fa-solid fa-play"></i></a>
+                    <a href="contact.html" class="btn-outline-white">Zapytaj o wdrożenie</a>
+                </div>
             </div>
         </div>
     </section>
@@ -152,7 +187,6 @@
         <p>&copy; 2025 SmartWMS. Projekt oparty na designie Smart Home.</p>
     </footer>
 
-    <script src="demo-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

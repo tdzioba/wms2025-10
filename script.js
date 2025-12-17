@@ -53,3 +53,60 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- Obsługa Scroll Reveal Animation ---
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 50; // Zmniejszamy próg, aby łapało szybciej
+
+        revealElements.forEach((element) => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Wywołaj raz na starcie
+
+    // --- Active Menu Highlighter ---
+    // Pobierz aktualną ścieżkę (np. "/contact.html")
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        // Jeśli href linku pasuje do nazwy pliku
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // --- Obsługa przycisku Demo ---
+    const demoLink = document.getElementById('demoLink');
+    if (demoLink) {
+        demoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const originalContent = demoLink.innerHTML;
+            demoLink.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Ładowanie...';
+            demoLink.style.opacity = '0.8';
+            setTimeout(() => {
+                window.location.href = 'demo.html';
+            }, 1500);
+        });
+    }
+
+    // --- Navbar Sticky Effect ---
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+        } else {
+            navbar.style.boxShadow = "none";
+        }
+    });
+});
